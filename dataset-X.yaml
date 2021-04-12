@@ -36,7 +36,7 @@ measures:
   activity:
     description: Amount of transport activity.
   area_type:
-    description: Qualitative: either urban or rural.
+    description: "Qualitative: either urban or rural."
 
 # List of different data available
 data:
