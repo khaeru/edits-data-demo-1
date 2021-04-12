@@ -1,0 +1,49 @@
+# This file omits comments
+format: 1
+
+title: Example activity data
+description: >
+  This is an example data description for EDITS.
+
+provider:
+  organisation: Fictitious Organization
+  contact: person@example.com
+
+# Arbitrary hierarchical classifiers describing the data
+classifiers:
+- "Kind :: Survey"
+- "Availability :: Public"
+
+# List of data dimensions
+dimensions:
+  time:
+    scope: December 2020 to January 2021
+    resolution: cross-sectional
+  space:
+    scope: 22 countries
+    resolution: country
+  respondent:
+    description: Identifier for each survey respondent.
+    scope: 1000 respondents per country
+    resolution: individual, by respondent ID
+  mode:
+    description: Mode of transport
+    scope: Some passenger modes
+    resolution: "3-point scale: car, active (bicycle/walking), public transport"
+    
+# List of data measures
+measures:
+  activity:
+    description: Amount of transport activity.
+  area_type:
+    description: Qualitative: either urban or rural.
+
+# List of different data available
+data:
+- measure: activity
+  dimensions: [time, space, respondent, mode]
+  units: trips
+- measure: area_type
+  dimensions: [time, space, respondent]
+  # Qualitative data: no units, but a discrete scale
+  scale: urban, rural
